@@ -1,0 +1,419 @@
+/* style.css - MAYRA TOURS Advanced Rich Content Edition */
+:root {
+    --primary-color: #1b5e20; /* Deep Forest Green */
+    --accent-color: #ffa000;  /* Safari Gold */
+    --ocean-blue: #00838f;    /* Zanzibar Cyan */
+    --dark-bg: #121212;
+    --light-bg: #fdfaf5;
+    --text-main: #2c3e50;
+    --text-white: #ffffff;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-main);
+    background-color: var(--light-bg);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* --- NAVIGATION --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 5%;
+}
+
+.glass-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-white);
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-white);
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.btn-primary {
+    padding: 12px 25px;
+    background: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary:hover {
+    background: #ff8f00;
+    transform: translateY(-2px);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+                url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1920&q=80') center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hero-overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    background: linear-gradient(to right, rgba(0,0,0,0.85), transparent);
+}
+
+.hero-content {
+    max-width: 800px;
+    color: white;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 6px;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    max-width: 550px;
+}
+
+/* --- SEARCH BAR --- */
+.search-bar {
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    max-width: 650px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.search-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    flex: 1;
+    border-right: 1px solid #eee;
+}
+
+.search-item:last-of-type { border-right: none; }
+
+.search-item label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 4px;
+}
+
+.search-item input, .search-item select {
+    border: none;
+    outline: none;
+    font-size: 0.95rem;
+    color: #333;
+    background: none;
+}
+
+.search-btn {
+    background: var(--primary-color);
+    border: none;
+    padding: 15px 25px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+/* --- SECTION HEADERS --- */
+.section-title {
+    text-align: center;
+    margin-bottom: 80px;
+    padding: 0 5%;
+}
+
+.section-title span {
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-weight: 700;
+    font-size: 0.75rem;
+    display: block;
+    margin-bottom: 18px;
+    opacity: 0.9;
+    animation: fadeInDown 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.section-title h2 {
+    font-size: 4.2rem;
+    color: var(--primary-color);
+    line-height: 1.05;
+    font-weight: 700;
+    position: relative;
+    letter-spacing: -1px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+}
+
+.section-title .underline {
+    width: 140px;
+    height: 4px;
+    background: linear-gradient(to right, transparent, var(--accent-color), var(--primary-color), var(--accent-color), transparent);
+    margin: 35px auto 0;
+    border-radius: 50px;
+    box-shadow: 0 6px 15px rgba(255, 160, 0, 0.2);
+    position: relative;
+}
+
+.section-title .underline::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- TANZANIA GALLERY --- */
+.wide-gallery { padding: 100px 5%; background: #fff; }
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 300px;
+    gap: 20px;
+    grid-auto-flow: dense;
+}
+.gallery-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+.gallery-card.tall { grid-row: span 2; }
+.gallery-card.wide { grid-column: span 2; }
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+.gallery-card:hover img {
+    transform: scale(1.1);
+}
+@media (max-width: 768px) {
+    .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 300px; }
+    .gallery-card.wide { grid-column: span 1; }
+}
+
+/* --- DESTINATIONS --- */
+.destinations { padding: 100px 10%; background: #fff; }
+.dest-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 400px);
+    gap: 25px;
+}
+.dest-card { position: relative; border-radius: 20px; overflow: hidden; cursor: pointer; }
+.dest-card.tall { grid-row: span 2; }
+.dest-card img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+.dest-card:hover img { transform: scale(1.08); }
+.card-info { position: absolute; bottom: 0; padding: 40px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); color: white; width: 100%; }
+.tag { background: var(--accent-color); padding: 5px 12px; font-size: 0.7rem; border-radius: 20px; text-transform: uppercase; font-weight: 700; display: inline-block; margin-bottom: 10px; }
+
+/* --- ABOUT SECTION --- */
+.about-section {
+    height: 600px;
+    background: url('https://jerrytanzaniatours.com/assest/images/tanzania-culture-banner.webp') center/cover fixed;
+    display: flex;
+    align-items: center;
+}
+.about-overlay { background: rgba(0,0,0,0.7); width: 100%; height: 100%; display: flex; align-items: center; padding: 0 10%; }
+.about-content { max-width: 700px; color: white; }
+.about-content span { color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; }
+.about-content h2 { font-size: 3.5rem; margin: 15px 0; }
+.about-content p { font-size: 1.1rem; margin-bottom: 20px; opacity: 0.9; }
+
+/* --- HEALTH & TEAM SECTION --- */
+.health-feature { padding: 100px 10%; background: #f0f4f0; }
+.health-container { display: flex; align-items: center; gap: 60px; }
+.health-text { flex: 1; }
+.health-text h2 { font-size: 3rem; margin: 15px 0; color: var(--primary-color); }
+.health-list { list-style: none; margin-top: 30px; }
+.health-list li { margin-bottom: 20px; display: flex; align-items: flex-start; gap: 15px; }
+.health-list i { color: var(--accent-color); font-size: 1.2rem; margin-top: 5px; }
+.health-image { flex: 1; position: relative; }
+.health-image img { width: 100%; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
+.health-badge { position: absolute; bottom: -20px; right: -20px; background: var(--accent-color); color: white; padding: 20px 30px; border-radius: 20px; display: flex; align-items: center; gap: 15px; box-shadow: 0 10px 30px rgba(255,160,0,0.3); }
+
+.team-section { padding: 100px 10%; background: #fff; }
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.team-card { text-align: center; background: var(--light-bg); padding: 40px 20px; border-radius: 20px; transition: var(--transition); }
+.team-card:hover { transform: translateY(-10px); background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+.team-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 4px solid var(--accent-color); }
+.team-card h4 { font-size: 1.4rem; color: var(--primary-color); }
+.team-card span { font-size: 0.8rem; text-transform: uppercase; color: var(--accent-color); font-weight: 700; display: block; margin-bottom: 15px; }
+
+/* --- MOSAIC GRID --- */
+.mosaic-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 320px; gap: 20px; padding: 0 5%; grid-auto-flow: dense; }
+.mosaic-item { position: relative; border-radius: 15px; overflow: hidden; }
+.mosaic-item img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+.mosaic-item.large { grid-column: span 2; grid-row: span 2; }
+.mosaic-item.wide { grid-column: span 2; }
+.mosaic-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 25px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white; opacity: 0; transition: var(--transition); }
+.mosaic-item:hover .mosaic-overlay { opacity: 1; }
+.mosaic-item:hover img { transform: scale(1.05); }
+
+/* --- TERMS SECTION --- */
+.terms-section { padding: 120px 10%; background: var(--light-bg); }
+.terms-container { max-width: 1200px; margin: 0 auto; }
+.terms-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; margin-top: 50px; }
+.term-item { padding: 40px 30px; border-radius: 20px; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: var(--transition); border-top: 4px solid var(--primary-color); display: flex; flex-direction: column; height: 100%; }
+.term-item:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+.term-item i { font-size: 2rem; color: var(--accent-color); margin-bottom: 20px; }
+.term-item h4 { font-size: 1.2rem; margin-bottom: 15px; color: var(--primary-color); font-family: 'Montserrat', sans-serif; font-weight: 700; }
+.term-item p { font-size: 0.9rem; color: #666; line-height: 1.6; }
+
+/* --- TESTIMONIALS --- */
+.testimonials { padding: 100px 10%; background: var(--primary-color); color: white; text-align: center; }
+.testimonial-container { max-width: 800px; margin: 0 auto; }
+.testimonial-card p { font-size: 1.4rem; font-style: italic; line-height: 1.6; margin-bottom: 30px; font-family: 'Playfair Display', serif; }
+.testimonial-author { display: flex; align-items: center; justify-content: center; gap: 15px; }
+.testimonial-author img { width: 60px; height: 60px; border-radius: 50%; }
+
+/* --- FAQ SECTION --- */
+.faq-section { padding: 100px 10%; background: #fff; }
+.faq-container { max-width: 800px; margin: 0 auto; }
+.faq-item { margin-bottom: 15px; border-bottom: 1px solid #eee; }
+.faq-question { padding: 20px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; color: var(--primary-color); }
+.faq-answer { padding: 0 0 20px; color: #666; display: none; }
+.faq-item.active .faq-answer { display: block; }
+.faq-item.active i { transform: rotate(180deg); color: var(--accent-color); }
+
+/* --- BOOKING FORM --- */
+.booking-section { padding: 100px 10%; background: var(--light-bg); display: flex; gap: 50px; align-items: center; }
+.booking-info { flex: 1; }
+.booking-form-box { flex: 1; background: white; padding: 50px; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.05); }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 15px; border: 1px solid #eee; border-radius: 10px; font-family: inherit; }
+
+/* --- MODAL --- */
+.modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px; }
+.modal-content { background: white; max-width: 900px; width: 100%; max-height: 90vh; overflow-y: auto; border-radius: 30px; position: relative; padding: 50px; }
+.close-modal { position: absolute; top: 20px; right: 30px; font-size: 2.5rem; cursor: pointer; color: #333; }
+.itinerary-day { margin-bottom: 30px; padding-left: 20px; border-left: 3px solid var(--accent-color); }
+.itinerary-day h5 { color: var(--primary-color); font-size: 1.1rem; }
+
+/* --- SAFETY STRIP --- */
+.safety-strip { background: var(--primary-color); padding: 40px 10%; display: flex; justify-content: space-between; color: white; text-align: center; }
+.safety-item i { font-size: 2rem; margin-bottom: 10px; color: var(--accent-color); }
+.safety-item p { font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+
+/* --- FOOTER --- */
+footer { background: var(--dark-bg); color: white; padding: 100px 10% 40px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 60px; }
+.footer-info .logo { margin-bottom: 20px; font-size: 2rem; }
+.socials { display: flex; gap: 20px; margin-top: 30px; }
+.footer-links h4 { margin-bottom: 25px; color: var(--accent-color); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; }
+.footer-links a, .footer-links p { color: #aaa; text-decoration: none; display: block; margin-bottom: 15px; font-size: 0.9rem; }
+.copyright { margin-top: 40px; text-align: center; opacity: 0.4; font-size: 0.8rem; }
+
+/* --- MOBILE --- */
+@media (max-width: 1200px) {
+    .terms-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 992px) {
+    .nav-links { display: none; }
+    .hero-content h1 { font-size: 3rem; }
+    .health-container, .booking-section { flex-direction: column; text-align: center; }
+    .mosaic-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    .socials { justify-content: center; }
+}
+@media (max-width: 768px) {
+    .terms-grid { grid-template-columns: 1fr; }
+    .dest-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+    .safety-strip { flex-direction: column; gap: 40px; }
+}
+@media (max-width: 600px) {
+    .mosaic-grid { grid-template-columns: 1fr; grid-auto-rows: 250px; }
+    .mosaic-item.large, .mosaic-item.wide { grid-column: span 1; grid-row: span 1; }
+}
