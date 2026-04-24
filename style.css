@@ -396,24 +396,59 @@ footer { background: var(--dark-bg); color: white; padding: 100px 10% 40px; }
 .footer-links a, .footer-links p { color: #aaa; text-decoration: none; display: block; margin-bottom: 15px; font-size: 0.9rem; }
 .copyright { margin-top: 40px; text-align: center; opacity: 0.4; font-size: 0.8rem; }
 
-/* --- MOBILE --- */
+/* --- MOBILE & RESPONSIVENESS REFINEMENT --- */
 @media (max-width: 1200px) {
     .terms-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
 @media (max-width: 992px) {
     .nav-links { display: none; }
+    .glass-nav { padding: 10px 25px; justify-content: center; gap: 20px; }
     .hero-content h1 { font-size: 3rem; }
-    .health-container, .booking-section { flex-direction: column; text-align: center; }
+    .hero-overlay { padding: 0 5%; text-align: center; justify-content: center; }
+    .hero-content p { margin: 0 auto 30px; }
+    .search-bar { flex-direction: column; width: 100%; max-width: 100%; gap: 10px; padding: 20px; }
+    .search-item { border-right: none; border-bottom: 1px solid #eee; padding: 10px 0; width: 100%; }
+    .search-btn { width: 100%; }
+
+    .health-container { flex-direction: column; text-align: center; gap: 40px; }
+    .health-badge { right: 50%; transform: translateX(50%); bottom: -30px; }
+
     .mosaic-grid { grid-template-columns: repeat(2, 1fr); }
     .footer-grid { grid-template-columns: 1fr; text-align: center; }
     .socials { justify-content: center; }
+
+    .section-title h2 { font-size: 3rem; }
 }
+
 @media (max-width: 768px) {
-    .terms-grid { grid-template-columns: 1fr; }
+    header { padding: 10px 3%; }
+    .logo { font-size: 1.3rem; }
+    .btn-primary { padding: 8px 15px; font-size: 0.7rem; }
+
+    .section-title { margin-bottom: 50px; }
+    .section-title h2 { font-size: 2.5rem; }
+    .section-title span { letter-spacing: 5px; font-size: 0.7rem; }
+
+    .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 250px; }
+    .gallery-card.wide, .gallery-card.tall { grid-column: span 1; grid-row: span 1; }
+
     .dest-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
-    .safety-strip { flex-direction: column; gap: 40px; }
-}
-@media (max-width: 600px) {
-    .mosaic-grid { grid-template-columns: 1fr; grid-auto-rows: 250px; }
+    .dest-card { height: 350px; }
+
+    .about-section { height: auto; padding: 80px 5%; }
+    .about-content h2 { font-size: 2.5rem; }
+
+    .terms-grid { grid-template-columns: 1fr; }
+    .safety-strip { flex-direction: column; gap: 30px; padding: 40px 5%; }
+
+    .mosaic-grid { grid-template-columns: 1fr; grid-auto-rows: 300px; }
     .mosaic-item.large, .mosaic-item.wide { grid-column: span 1; grid-row: span 1; }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 { font-size: 2.5rem; }
+    .section-title h2 { font-size: 2rem; }
+    .health-text h2 { font-size: 2.2rem; }
+    .footer-info .logo { font-size: 1.5rem; }
 }
